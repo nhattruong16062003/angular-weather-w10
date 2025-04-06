@@ -1,0 +1,35 @@
+<div class="weather-container">
+    <div class="search-section">
+        <input type="text" [(ngModel)]="searchQuery" (ngModelChange)="onInputChange($event)"
+            placeholder="Search for a city..." class="search-input">
+    </div>
+
+    <div *ngIf="weather$ | async as weather" class="weather-card">
+        <div class="weather-header">
+            <h2>{{ weather.location }}</h2>
+            <button *ngIf="authService.isAuthenticated$ | async" (click)="toggleFavorite(weather)"
+                class="favorite-button" [class.favorited]="weather.isFavorite">
+                ♥
+            </button>
+        </div>
+
+        <div class="weather-content">
+            <div class="weather-main">
+                <img [src]="weather.icon" alt="Weather icon" class="weather-icon">
+                <div class="temperature">{{ weather.temp_c }}°C</div>
+            </div>
+
+            <div class="weather-details">
+                <div class="weather-condition">{{ weather.condition }}</div>
+                <div class="detail-item">
+                    <span class="detail-label">Humidity:</span>
+                    <span class="detail-value">{{ weather.humidity }}%</span>
+                </div>
+                <div class="detail-item">
+                    <span class="detail-label">Wind:</span>
+                    <span class="detail-value">{{ weather.wind_kph }} km/h</span>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

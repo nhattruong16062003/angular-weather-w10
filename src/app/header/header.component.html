@@ -1,0 +1,15 @@
+<header class="header">
+    <div class="container">
+        <nav class="navbar">
+            <a routerLink="/" class="logo">WeatherApp</a>
+            <div class="nav-links">
+                <a routerLink="/" class="nav-link" routerLinkActive="active">Home</a>
+                <a routerLink="/favorites" class="nav-link" routerLinkActive="active">Favorites</a>
+            </div>
+            <div class="auth-section">
+                <button *ngIf="!isAuthenticated" (click)="login()" class="auth-button login">Login</button>
+                <button *ngIf="isAuthenticated" (click)="logout()" class="auth-button logout">Logout</button>
+            </div>
+        </nav>
+    </div>
+</header>

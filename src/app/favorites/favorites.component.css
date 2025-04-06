@@ -1,0 +1,83 @@
+.favorites-container {
+    max-width: 800px;
+    margin: 2rem auto;
+    padding: 1rem;
+  }
+  
+  h2 {
+    color: #1e88e5;
+    text-align: center;
+    margin-bottom: 2rem;
+  }
+  
+  .login-prompt, .empty-state {
+    text-align: center;
+    padding: 2rem;
+    background-color: #f5f5f5;
+    border-radius: 8px;
+    color: #666;
+  }
+  
+  .favorites-list {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+    gap: 1.5rem;
+  }
+  
+  .favorite-item {
+    background: white;
+    border-radius: 8px;
+    padding: 1.5rem;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+    display: flex;
+    flex-direction: column;
+  }
+  
+  .location-info h3 {
+    margin: 0 0 0.5rem 0;
+    color: #333;
+  }
+  
+  .weather-condition {
+    color: #666;
+    margin-bottom: 0.5rem;
+  }
+  
+  .temperature {
+    font-size: 1.5rem;
+    font-weight: bold;
+    color: #1e88e5;
+  }
+  
+  .actions {
+    margin-top: auto;
+    display: flex;
+    gap: 0.5rem;
+    padding-top: 1rem;
+  }
+  
+  .view-button, .remove-button {
+    padding: 0.5rem 1rem;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    transition: all 0.2s;
+  }
+  
+  .view-button {
+    background-color: #1e88e5;
+    color: white;
+  }
+  
+  .remove-button {
+    background-color: #f5f5f5;
+    color: #e53935;
+  }
+  
+  .view-button:hover {
+    background-color: #1565c0;
+  }
+  
+  .remove-button:hover {
+    background-color: #ffebee;
+  }

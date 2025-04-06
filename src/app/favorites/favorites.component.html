@@ -1,0 +1,25 @@
+<div class="favorites-container">
+    <h2>Your Favorite Locations</h2>
+
+    <div *ngIf="!isAuthenticated" class="login-prompt">
+        Please login to view your favorites.
+    </div>
+
+    <div *ngIf="isAuthenticated && favorites.length === 0" class="empty-state">
+        You don't have any favorite locations yet.
+    </div>
+
+    <div *ngIf="isAuthenticated && favorites.length > 0" class="favorites-list">
+        <div *ngFor="let fav of favorites" class="favorite-item">
+            <div class="location-info">
+                <h3>{{ fav.location }}</h3>
+                <div class="weather-condition">{{ fav.condition }}</div>
+                <div class="temperature">{{ fav.temp_c }}°C</div>
+            </div>
+            <div class="actions">
+                <button (click)="viewWeather(fav.location)" class="view-button">View</button>
+                <button (click)="removeFavorite(fav.location)" class="remove-button">Remove</button>
+            </div>
+        </div>
+    </div>
+</div>

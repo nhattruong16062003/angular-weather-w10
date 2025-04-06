@@ -1,6 +1,10 @@
+```bash
 npm install
+```
 
+```bash
 ng serve
+```
 
 ![alt text](image.png)
 
